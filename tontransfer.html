@@ -1,0 +1,24 @@
+const userAddress = address[0]; // Get user's address from TON Keeper
+
+                    // Use the appropriate contract address to send the prize
+                    const contractAddress = 'YOUR_CONTRACT_ADDRESS';  // Replace with your smart contract address
+                    const contractABI = [];  // Add your contract ABI here if required
+
+                    // Example of how to interact with the contract and send TON
+                    const contract = new tonClient.Contract(contractABI, contractAddress);
+                    await contract.methods.transfer(userAddress, prizeAmount).send();
+
+                    alert('Congratulations! You have received 80 TON Coin.');
+                    claimButton.style.display = 'none';
+                    spinButton.disabled = true;
+
+                } else {
+                    alert('TON Keeper is not installed. Please install TON Keeper and try again.');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
